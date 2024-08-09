@@ -1,0 +1,8 @@
+.displayBlokhome {
+    display: block;
+}
+
+.displayNonehome {
+    display: flex;
+    transform: translate(-400px, 0px);
+}

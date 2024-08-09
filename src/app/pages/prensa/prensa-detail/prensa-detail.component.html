@@ -1,0 +1,48 @@
+<div class="carousel slide shadow" style="height:30%; margin-bottom: 50px;">
+
+
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="BannPpal1 sli header pagina parallax" data-movimiento="10" id="sli2" style="background-image: url('./assets/img/banner/Red.jpg');">
+                <div class="container tttt tituloSlide">
+                    <h1>Prensa</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<section class="blog-detail mtb-40 " style="margin-bottom: 50px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="blog-left news" *ngIf="prensa$ | async as prensa else loading">
+                    <h1>{{prensa.title}}</h1>
+                    <div class="posted-on">
+                        <p>
+
+                            <span>{{prensa.created_at | date:'mediumDate'}}</span>
+                        </p>
+                    </div>
+                    <p class="blog-desc" [innerHTML]="prensa.description"></p>
+                    <a href="{{prensa.archivo}}" target="_blank" download>
+                        <button class="btn btn-primary">Descargar PDF</button>
+                    </a>
+
+                </div>
+                <ng-template #loading>
+                    <div class="service-error">
+                        <h3>Loading...</h3>
+                    </div>
+                    <!-- <div class="service-error">
+                        <h3>Error loading of the blog detail. Please try again later.</h3>
+                    </div> -->
+                </ng-template>
+            </div>
+            <div class="col-md-4">
+                <app-blogpost-recent></app-blogpost-recent>
+            </div>
+        </div>
+    </div>
+</section>

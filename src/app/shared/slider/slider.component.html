@@ -1,0 +1,72 @@
+<div id="myCarousel" class="carousel slide ">
+    <!-- Indicators>
+      <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      </ol-->
+
+    <!-- Wrapper for Slides -->
+    <div class="carousel-inner" *ngFor="let slider of sliders | slice:0:1 ">
+        <div class="item active">
+            <div class="desktop">
+                <div class="BannPpal1 sli header pagina parallax" data-movimiento="10" id="sli2" [ngStyle]="{'background-image': 'url(' + slider.image + ')'}">
+                    <!-- <div class="BannPpal1 sli header pagina parallax" data-movimiento="10" id="sli2" style="background-image: url('./assets/img/banner/Red.jpg');"> -->
+                    <div class="container tttt">
+                        <!-- <div class="textos">
+                      <h3 class="Up {{slider.is_activeText}}">{{slider.title}}</h3>
+                      <p class="Up {{slider.is_activeText}}">{{slider.description}}</p><br><br>
+                      <div *ngIf="!slider.is_modal">
+                          <div class="text-center">
+                              <a href="{{slider.enlace}}" target="{{slider.target}}" class="btn btn-success btn-lg {{slider.is_activeBot}}">{{slider.boton}}  </a>
+
+                          </div>
+                      </div>
+                      <div *ngIf="slider.is_modal">
+                          <div class="text-center">
+                              <a data-toggle="modal" [attr.data-target]="'#' + slider.id" class="btn btn-success btn-lg {{slider.is_activeBot}}">{{slider.boton}}</a>
+                          </div>
+                      </div>
+                  </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="movil">
+                <div class="BannPpal1 sli header pagina parallax" style="background-image: url('./assets/img/banner/RedM.jpg');">
+                    <!-- <div class="BannPpal1 BannPpal sli header" [ngStyle]="{'background-image': 'url(' + slider.imagemovil + ')'}"> -->
+                </div>
+            </div>
+
+        </div>
+
+        <!--a href="#sli3" class="ancla"><div class="mouseicon "></div></a-->
+
+        <!---modal -->
+        <!-- <div class="modal fade modalproductos" id="{{slider.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header ">
+                        <h6>{{slider.title}}</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body modalserv">
+                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                            <iframe class="embed-responsive-item" [src]="getVideoIframe(slider.video_review)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+        </div> -->
+        <!---fin modal -->
+    </div>
+
+    <!-- Controls -->
+    <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+    </a> -->
+
+</div>

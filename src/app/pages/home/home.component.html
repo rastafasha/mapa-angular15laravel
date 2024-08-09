@@ -1,0 +1,76 @@
+<!-- <app-slider></app-slider> -->
+<!-- <app-video></app-video> -->
+<section class="mantengase sli flex " id="sli3">
+    <app-mapa></app-mapa>
+</section>
+<!---modulo lateral-->
+<section class="soluciones sli flex hom displayNonehome ">
+    <div class="container">
+        <!-- ============================================================== -->
+        <!-- Informacion  -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div ngclass="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex no-block">
+                            <div class="m-r-20 "></div>
+                            <div class="align-self-center">
+
+                                <app-lista-paises></app-lista-paises>
+
+                            </div>
+                        </div>
+                        <!--informacion resultado-->
+                        <div class="resultado ">
+                            <div class="scrolling card-content">
+
+
+
+                                <div id="navtabsbootstrap">
+
+                                    <!-- Nav tabs-->
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li role="presentation" class="active"><a href="#datos" aria-controls="datos" role="tab" data-toggle="tab">Eventos</a></li>
+                                        <!-- <li role="presentation"><a href="#lessages" aria-controls="lessages" role="tab" data-toggle="tab">Crímenes LH</a></li> -->
+                                        <!-- <li role="presentation"><a href="#ddhh" aria-controls="ddhh" role="tab" data-toggle="tab">Violaciones DDHH</a></li> -->
+                                    </ul>
+
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <!-- Datos Victimas-->
+                                        <div role="tabpanel" class="tab-pane active" id="datos">
+                                            <app-datos-victimas></app-datos-victimas>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!--informacion-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!---// modulo lateral-->
+
+<div class="indicaciones">
+    <h1>Indicaciones</h1>
+                <p>Para obtener más información sobre los eventos, haga clic en los paises marcados</p>
+                <!-- <p>{{ year }} Sin Mordaza Org. | All Rights Reserved</p> -->
+</div>
+
+
+<script>
+    //info lateral
+    $(document).ready(main);
+
+    function main() {
+        $('#paperRegions').hide();
+    }
+</script>

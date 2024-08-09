@@ -1,0 +1,26 @@
+<div *ngIf="!paisrespuestaDatosv">
+    <div class="noinfo">
+        <img src="./assets/img/logo.png" alt="">
+        <h2>no hay información</h2>
+    </div>
+
+</div>
+
+<ng-template #loading>
+    <div class="service-error">
+        <h3>{{error}}</h3>
+    </div>
+</ng-template>
+
+<div *ngIf="paisrespuestaDatosv">
+
+    <div class="datos-victimas flex-container" *ngIf="paisrespuestaDatosv">
+        <ul>
+            <li>Fecha: {{paisrespuestaDatosv.fecha|date}}</li>
+            <li>Hora: {{paisrespuestaDatosv.hora}}</li>
+            <li>Lugar: {{paisrespuestaDatosv.lugar}}</li>
+            <li>Ciudad: {{paisrespuestaDatosv.ciudad}}</li>
+            <li>Dirección: {{paisrespuestaDatosv.direccion}}</li>
+        </ul>
+    </div>
+</div>

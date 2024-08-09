@@ -1,0 +1,11 @@
+.videoplay {
+    height: 100vh;
+    padding: 20px 0;
+}
+
+@media(max-width: 768px) {
+    .videoplay {
+        height: auto;
+        padding: 20px 0;
+    }
+}

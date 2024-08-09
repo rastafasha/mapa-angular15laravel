@@ -1,0 +1,19 @@
+<div class="right-widget recentnews">
+    <h3>Artículos Recientes</h3>
+    <div *ngFor="let blog of blogs">
+        <a [routerLink]="['/prensa', blog.id]">
+            <div class="rb-box">
+
+                <div class="rb-box-desc">
+                    <h4>{{blog.title | slice:0:120}}...</h4>
+                    <p>{{blog.created_at | date:'mediumDate'}}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="service-error" *ngIf="error">
+        <h3>{{error.errorTitle}}</h3>
+        <p>{{error.errorDesc}}
+            <p>
+    </div>
+</div>

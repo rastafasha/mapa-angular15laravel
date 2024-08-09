@@ -1,0 +1,34 @@
+<div class="carousel slide shadow" style="height:30%; margin-bottom: 50px;">
+
+
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="BannPpal1 sli header pagina parallax" data-movimiento="10" id="sli2" style="background-image: url('./assets/img/banner/Red.jpg');">
+                <div class="container tttt tituloSlide">
+                    <h1>Prensa</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<section>
+    <div class="container">
+        <div class="col-xs-12 col-sm-4" *ngFor="let art of articulos | keys | paginate: { itemsPerPage: count, currentPage: p }">
+            <div class="card shadow padd news">
+                <div class="card-body">
+                    <img src="./assets/img/topeNews.jpg" alt="{{art.title}} red clh">
+                    <small>{{art.created_at | date:'mediumDate'}}</small>
+                    <h1>{{art.title | slice: 0:80}}...</h1>
+                    <p [innerHTML]="art.description | slice: 0:120">...</p>
+                    <a [routerLink]="['/prensa', art.id]">
+                        <button class="btn btn-primary">Leer Más</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</section>

@@ -1,0 +1,14 @@
+<!-- *ngFor="let pais of paisrespuesta; let i=index" -->
+<div >
+    <div class="row ">
+        
+        <div class="col-xs-12 lista">
+            <button class="btn btn-danger"(click)="hideInfo()">X</button>
+            <h6 class="text-muted m-t-10 m-b-0">{{paisrespuesta?.code }}</h6>
+            <h2 class="m-t-0">{{paisrespuesta?.title }}</h2>
+            <p [innerHTML]="paisrespuesta?.informacion"> </p>
+                <h6>Ciudad</h6>
+                <div class="inforesult" [innerHTML]="paisrespuesta?.ciudades"></div>
+        </div>
+    </div>
+</div>

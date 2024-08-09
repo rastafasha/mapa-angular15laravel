@@ -1,0 +1,136 @@
+.displayBlok {
+    display: block;
+}
+
+.displayNone {
+    display: none;
+}
+
+.textos {
+    position: absolute;
+    z-index: 99999;
+    top: 30%;
+    left: 15%;
+    text-shadow: none;
+    width: 70%;
+}
+
+.textos h1 {
+    font-family: 'HelveticaNeueLTStd-Roman';
+    font-size: 55px;
+    text-align: left;
+    color: #fff;
+    overflow: hidden;
+}
+
+.textos h3 {
+    font-family: 'HelveticaNeueLTStd-Roman';
+    font-size: 40px;
+    text-align: left;
+    color: #fff;
+    overflow: hidden;
+}
+
+.textos p {
+    font-family: 'HelveticaNeueLTStd-Lt';
+    font-size: 16px;
+    text-align: left;
+    position: relative;
+    color: #fff;
+}
+
+.textos .boton2 {
+    border-color: #fff;
+    color: #fff;
+}
+
+.textos .small {
+    font-family: 'HelveticaNeueLTStd-Lt';
+    font-size: 14px;
+    text-align: left !important;
+    color: #fff;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.textos .small::before {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: -10px;
+}
+
+.desktop {
+    display: contents;
+}
+
+.movil {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .textos {
+        position: absolute;
+        z-index: 99999;
+        top: 38%;
+        left: 15%;
+        text-shadow: none;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    .textos h1 {
+        font-family: 'HelveticaNeueLTStd-Roman';
+        font-size: 24px;
+        text-align: left;
+        color: #fff;
+        overflow: hidden;
+    }
+    .textos h3 {
+        font-family: 'HelveticaNeueLTStd-Roman';
+        font-size: 20px;
+        text-align: left;
+        color: #fff;
+        overflow: hidden;
+    }
+    .textos p {
+        font-family: 'HelveticaNeueLTStd-Lt';
+        font-size: 14px;
+        text-align: left;
+        position: relative;
+        color: #fff;
+    }
+    .textos .btn {
+        position: absolute;
+        z-index: 99999;
+        top: 398%;
+        left: calc(18%);
+        text-shadow: none;
+        width: auto;
+    }
+}
+
+@media(max-width:768px) {
+    .desktop {
+        display: none;
+    }
+    .movil {
+        display: block;
+    }
+    .carousel-inner {
+        translate: 0px -30px;
+    }
+}
+
+@media(min-width:769px) {
+    .textos .btn {
+        width: 40%;
+        display: block;
+        margin: 0 auto;
+        margin-top: 140px;
+    }
+}
