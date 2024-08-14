@@ -35,7 +35,7 @@
 .texto {
     position: relative;
     z-index: 99999;
-    top: 50px;
+    top: 40px;
     left: 0%;
     width: 33%;
     height: auto;
@@ -67,7 +67,7 @@
 }
 
 .texto img {
-    width: 90%;
+    width: 70%;
     height: auto;
     margin: 20px auto;
     display: block;

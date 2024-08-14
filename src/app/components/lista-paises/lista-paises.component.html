@@ -3,12 +3,48 @@
     <div class="row ">
         
         <div class="col-xs-12 lista">
-            <button class="btn btn-danger"(click)="hideInfo()">X</button>
-            <h6 class="text-muted m-t-10 m-b-0">{{paisrespuesta?.code }}</h6>
-            <h2 class="m-t-0">{{paisrespuesta?.title }}</h2>
-            <p [innerHTML]="paisrespuesta?.informacion"> </p>
-                <h6>Ciudad</h6>
-                <div class="inforesult" [innerHTML]="paisrespuesta?.ciudades"></div>
+            <div class="tope">
+                <h6 class=" m-t-10 m-b-0"><span class="text-muted">{{paisrespuesta?.code }} |</span> {{paisrespuesta?.title }}</h6>
+                <!-- <h2 class="m-t-0"></h2> -->
+                <p [innerHTML]="paisrespuesta?.informacion"> </p>
+                <button *ngIf="!tareaSelected" class="btn btn-primary btn-sm"(click)="hideInfo()">X</button>
+            </div>
+            <hr>
+            <h6 *ngIf="!tareaSelected">Ciudades</h6>
+
+                <div *ngIf="!tareaSelected" class="listaciudad">
+                    <div *ngIf="!ciudadesList || ciudadesList === null">
+                        <h2>no info</h2>
+                    </div>
+                    <div *ngIf="ciudadesList">
+                        <ul >
+                            <ng-container *ngFor="let ciud of ciudadesList; let i = index">
+                                <li>{{ciud.ciudad}} 
+                                    <button class="btn btn-primary btn-sm" (click)="selectedDireccion(ciud)"> + info</button>
+                                </li>
+
+                            </ng-container>
+                            
+                        </ul>
+
+                    </div>
+                    
+                </div>
+                <div *ngIf="tareaSelected">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="text-muted">Ciudad:</h4>
+                            <p>{{tareaSelected.ciudad}}</p>
+                            <h4 class="text-muted"> Hora:</h4>
+                            <p>{{tareaSelected.hora}} </p>
+                            <h4 class="text-muted"> Ubicación:</h4>
+                            <p> {{tareaSelected.ubicacion}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="tareaSelected">
+                    <button class="btn btn-primary btn-sm" (click)="tareaSelected = null">Regresar</button>
+                </div>
         </div>
     </div>
 </div>

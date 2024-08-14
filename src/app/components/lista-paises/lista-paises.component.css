@@ -11,3 +11,46 @@
     border-radius: 100px;
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .11), 0 9px 10px 0 rgba(0, 0, 0, .08);
 }
+
+.listaciudad{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    width: 100%;
+    text-align: right;
+
+}
+
+.listaciudad ul{
+    list-style: none;
+}
+.listaciudad ul li{
+    width: 25vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0px;
+    margin: 5px 0px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tope{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media(max-width:768px){
+    .listaciudad{
+        display: flex;
+        width: 84vw;
+    
+    }
+
+    .listaciudad ul li{
+        width: 80vw;
+    }
+
+    .lista {    
+        width: 90vw;
+    }
+}

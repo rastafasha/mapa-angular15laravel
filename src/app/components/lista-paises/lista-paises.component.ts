@@ -24,6 +24,13 @@ export class ListaPaisesComponent implements OnInit {
 pais$:PaisResponsive;
 stringJson: any;
 
+
+
+public ciudadesList:any = [{}];
+  public ciudades:any;
+
+  tareaSelected:any =null;
+
 public paises: PaisResponsive;
 
   constructor(
@@ -62,9 +69,20 @@ public paises: PaisResponsive;
         (resp:any) => {
 
           this.paisrespuesta = resp.pais;
-          //console.log(this.paisrespuesta);
           console.log(this.paisrespuesta);
-          if (this.paisrespuesta === null) {
+
+          this.ciudades = resp.ciudades ? resp.ciudades : null;// ?
+          let jsonObj = JSON.parse(this.ciudades) || '';
+          this.ciudadesList = jsonObj;
+
+          if (this.ciudades === 404) {
+            this.paisrespuesta = {
+              id: 0,
+              title: 'No hay información',
+              // code: this.paisrespuesta.code
+            } as PaisResponsive;
+          }
+          if (this.paisrespuesta === null || this.ciudades === null) {
             this.paisrespuesta = {
               id: 0,
               title: 'No hay información',
@@ -126,7 +144,9 @@ hideInfo() {
 
   
 
-
+selectedDireccion(ciud:any){
+  this.tareaSelected = ciud
+}
 
 
 
