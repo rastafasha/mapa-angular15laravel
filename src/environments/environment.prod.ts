@@ -12,8 +12,8 @@ export const environment = {
     // url_media: 'https://mapaconcentracion.sinmordaza.org/backend-api-mapas/public/storage/',
 
     //remoto v2
-    url_backend: 'https://backmapa.svcbmf.com/backend-api-mapas/',
-    url_servicios: 'https://backmapa.svcbmf.com/backend-api-mapas/public/api',
+    url_backend: 'https://backmapa1.svcbmf.com/backend-api-mapas/',
+    url_servicios: 'https://backmapa1.svcbmf.com/backend-api-mapas/public/api',
     url_frontend: 'https://mapaconcentracion.sinmordaza.org/',
-    url_media: 'https://backmapa.svcbmf.com/backend-api-mapas/public/storage/',
+    url_media: 'https://backmapa1.svcbmf.com/backend-api-mapas/public/storage/',
 };
