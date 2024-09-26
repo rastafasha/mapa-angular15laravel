@@ -10,23 +10,19 @@
                 <button *ngIf="!tareaSelected" class="btn btn-primary btn-sm"(click)="hideInfo()">X</button>
             </div>
             <hr>
-            <h6 *ngIf="!tareaSelected">Ciudades</h6>
+            <h6 *ngIf="!tareaSelected">Ciudades ({{ciudadesList.length}})</h6>
 
                 <div *ngIf="!tareaSelected" class="listaciudad">
                     <div *ngIf="!ciudadesList || ciudadesList === null">
                         <h2>no info</h2>
                     </div>
+                    <!-- | orderByJson: 'ciudad' -->
                     <div *ngIf="ciudadesList">
-                        <ul >
-                            <ng-container *ngFor="let ciud of ciudadesList; let i = index">
-                                <li>{{ciud.ciudad}} 
-                                    <button class="btn btn-primary btn-sm" (click)="selectedDireccion(ciud)"> + info</button>
-                                </li>
-
-                            </ng-container>
-                            
+                        <ul *ngFor="let ciud of ciudadesList ; let i = index">
+                            <li>{{ciud.ciudad}} 
+                                <button class="btn btn-primary btn-sm" (click)="selectedDireccion(ciud)"> + info</button>
+                            </li>
                         </ul>
-
                     </div>
                     
                 </div>

@@ -59,13 +59,13 @@ export class MapaComponent  implements OnInit{
     const value = idAttr.nodeValue;
     this.mapaService.filter(value);
 
-    console.log(value);
+    // console.log(value);
   }
 
   activarBotonColor(): void {
     this.paisService.getPaises().subscribe((resp: any) => {
       this.paises = resp.countries;
-      console.log(this.paises);
+      // console.log(this.paises);
       this.highlightActiveCountries();
     });
   }

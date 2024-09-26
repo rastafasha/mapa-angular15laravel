@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MapaService } from 'src/app/services/services/mapa.service';
 import { PaisService } from 'src/app/services/services/pais.service';
 
-import { Pais} from '../../models/pais';
+import { Ciudades, Pais} from '../../models/pais';
 import { MapaComponent } from '../mapa/mapa.component';
 import { PaisResponsive, PaisResponsivePartial } from '../../interfaces/pais.interface';
 import { environment } from '../../../environments/environment';
@@ -26,8 +26,8 @@ stringJson: any;
 
 
 
-public ciudadesList:any = [{}];
-  public ciudades:any;
+public ciudadesList: Ciudades[] = [];
+  public ciudades:any = [];
 
   tareaSelected:any =null;
 
@@ -71,9 +71,14 @@ public paises: PaisResponsive;
           this.paisrespuesta = resp.pais;
           console.log(this.paisrespuesta);
 
-          this.ciudades = resp.ciudades ? resp.ciudades : null;// ?
-          let jsonObj = JSON.parse(this.ciudades) || '';
-          this.ciudadesList = jsonObj;
+          this.ciudades = resp.ciudades[0] ? resp.ciudades[0] : null;
+          if (this.ciudades !== null) {
+            let jsonObj = JSON.parse(this.ciudades);
+            this.ciudadesList = jsonObj;
+            console.log(this.ciudadesList);
+          } else {
+            this.ciudadesList = []; // or some default value
+          }
 
           if (this.ciudades === 404) {
             this.paisrespuesta = {

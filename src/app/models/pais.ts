@@ -9,3 +9,8 @@ export class Pais {
   created_at: Date;
   length: number;
 }
+export class Ciudades {
+  ciudad: string;
+  hora: string;
+  ubicacion: string;
+}
